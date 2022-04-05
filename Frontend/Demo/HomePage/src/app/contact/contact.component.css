@@ -1,0 +1,7 @@
+.mb-4{
+    background-image: linear-gradient(rgba(213, 235, 10, 0.89),rgba(224, 228, 24, 0.959)), url('image/b2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    height: 100%;
+}

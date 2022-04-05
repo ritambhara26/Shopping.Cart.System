@@ -1,0 +1,14 @@
+.card
+{
+    /* background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url('image/product.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    height: 100%;
+    
+}
+h1
+{
+    font-size: x-large;
+    margin-left:80px;
+}

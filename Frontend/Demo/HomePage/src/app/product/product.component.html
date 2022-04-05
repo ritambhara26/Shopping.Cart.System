@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="card">
+        <h1 class="text-center">Products List</h1>
+        <div class="card-body">
+            <table class="table mt-4">
+                <thead>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Product Name</th>
+                    <th scope ="col">Product Image</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Action</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>{{ product.productid}}</td>
+                        <td>{{ product.productname}}</td>
+                        <td><img src="{{product.prodimage}}" height="150" width="100"/></td>
+                        <td>{{ product.description}}</td>
+                        <td>{{ product.quantity}}</td>
+                        <td>{{product.price}}</td>
+                        <td>
+                            <button (click) = "onEditprod(product)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Edit
+                              </button>
+                            &nbsp;<button class="btn btn-danger" (click) = "deleteprod(product)">Delete</button>
+                          <!-- &nbsp;<button class="btn btn-primary" (click)=onSelect(product)>Add to cart</button> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button (click)="clickAddprod()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add Product
+              </button>
+        </div>
+    </div>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label class="form-label">Product Name</label>
+                  <input type="text" formControlName="productname" class="form-control" placeholder="Product Name" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Product Image</label>
+                  <!-- <base href="/"> -->
+                  <input type="file" formControlName="prodimage" class="form-control" placeholder="Product Image" (change)="onSelectionFile($event)" id="exampleInputEmail1">
+              </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <input type="text" formControlName="description" class="form-control" placeholder="Description" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Quantity</label>
+                    <input type="text" formControlName="quantity" class="form-control" placeholder="Quantity" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="text" formControlName="price" class="form-control" placeholder="Price" id="exampleInputEmail1">
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button *ngIf="showAdd" type="button" class="btn btn-primary" (click)="addProduct()">Add Product</button>
+          <button *ngIf="showBtn"  type="button" class="btn btn-primary" (click)="updateProduct()">Update Product</button>
+        </div>
+      </div>
+    </div>
+  </div>

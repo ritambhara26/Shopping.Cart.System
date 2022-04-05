@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{ background-image: url('C:\Users\RITACHAT\Desktop\Shopping Cart System\Frontend\Demo\HomePage\src\assets\image\pic1.jpg');
+     background-size: cover;
+    }
+

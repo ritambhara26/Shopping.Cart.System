@@ -1,0 +1,33 @@
+
+<!--table-->
+<div class="container"> 
+    <div class="card"> 
+        <div class="card-body">
+          <h1 class="text-center">Cart List</h1>
+<table class="table mt-4">
+    <thead>
+        <th scope="col">Product ID</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+    
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ singleProdList.productid}}</td>
+            <td>{{ singleProdList.productname}}</td>
+            <td><img src="{{singleProdList.prodimage}}" height="150" width="100"/></td>
+            <td>{{ singleProdList.description}}</td>
+            <td>{{ singleProdList.quantity}}</td>
+            <td>{{singleProdList.price}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+<div style="display: flex; justify-content: center; align-items: center;">
+<a href="http://localhost:8087/"><button type="button" class="btn-success">Buy Now</button></a></div>
+</div>
+</div>
+</div>

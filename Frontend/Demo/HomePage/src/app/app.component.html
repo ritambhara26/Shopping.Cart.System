@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>supervised_user_circle</mat-icon>
+    </button>
+    <span>Fly Buy</span>
+    <span class="example-spacer"></span>
+    <mat-form-field >
+      <input type="text" matInput placeholder="Search...">
+      </mat-form-field>
+      <mat-icon >search</mat-icon>
+      &nbsp;
+    <a mat-button routerLink="home">Home</a>
+    <a mat-button routerLink="productlist"> Products</a>
+    <a mat-button routerLink="contact"> ContactUs</a>
+    
+
+    <mat-icon>add_shopping_cart</mat-icon>
+    <a mat-button routerLink="cart"> Cart</a>
+    <!-- <button mat-raised-button color="warn" (click)="openDialog()">SignUp</button> -->
+    <button mat-button routerLink="login"  routerLinkActive="active">Login</button>
+    <button mat-button routerLink="register"  routerLinkActive="active">Register</button>
+    <a *ngIf="loggedIn" (click)="logoutUser()" mat-raised-button color="primary">
+
+      Logout</a>
+
+      
+  </mat-toolbar>
+
+
+ 
+  <router-outlet></router-outlet>
+
+  
